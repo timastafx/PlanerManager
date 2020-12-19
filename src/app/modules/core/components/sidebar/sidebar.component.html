@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div
+    class="sidebar__panel sidebar-panel"
+    [ngClass]="{
+      'sidebar-panel--opened': isSidebarOpen,
+      'sidebar-panel--closed': !isSidebarOpen
+    }"
+  >
+    <div class="sidebar-panel__content">
+      <ng-content select="[sidebar]"></ng-content>
+    </div>
+
+    <button *ngIf="isHideButtonVisible" class="sidebar-panel__toggle" (click)="sidebarToggle()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none">
+        <path
+          d="M0 7.06563L3.07812 4L0.00312471 0.934375L0.940625 0L4.95 4L0.9375 8L0 7.06563ZM5.05 7.06563L8.125 4L5.05 0.934375L5.9875 0L10 4L5.9875 8L5.05 7.06563Z"
+          fill="#126AFB"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <div class="sidebar__content">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="calendar-general">
+  <ng-container *ngFor="let item of getCalendarGrid(); trackBy: trackById">
+    <cl-cell [cellData]="item"></cl-cell>
+    <br />
+  </ng-container>
+</div>
